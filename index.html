@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Multi Step Form! - Developer-Ashutosh">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-thank-you.svg">
+
+  <title>Multi Step Form | @Developer Ashutosh</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <main>
+    <!-- Sidebar start -->
+    <section class="sidebar">
+      <ul>
+        <li>
+          <div class="left">
+            <div class="step-number one active">1</div>
+          </div>
+          <div class="right">
+            <div class="step">Step 1</div>
+            <div class="title">Your info</div>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div class="step-number two">2</div>
+          </div>
+          <div class="right">
+            <div class="step">Step 2</div>
+            <div class="title">Select plan</div>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div class="step-number three">3</div>
+          </div>
+          <div class="right">
+            <div class="step">Step 3</div>
+            <div class="title">Add-ons</div>
+          </div>
+        </li>
+        <li>
+          <div class="left">
+            <div class="step-number four">4</div>
+          </div>
+          <div class="right">
+            <div class="step">Step 4</div>
+            <div class="title">Summary</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Steps Start -->
+    <section class="steps">
+
+      <!-- Step 1 -->
+      <div class="step-one step">
+        <div class="header">
+          <h1> Personal info </h1>
+          <p>Please provide your name, email address, and phone number.</p>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <div class="head">
+              <label for="name">Name</label>
+              <span id="name-error"></span>
+            </div>
+            <input type="text" name="Name" id="name" placeholder="e.g. Stephen King" autocomplete="name">
+          </div>
+          <div class="detail">
+            <div class="head">
+              <label for="email">Email Address</label>
+              <span></span>
+            </div>
+            <input type="text" name="Email" id="email" placeholder="e.g. stephenking@lorem.com" autocomplete="email">
+          </div>
+          <div class="detail">
+            <div class="head">
+              <label for="number">Phone Number</label>
+              <span id="number-error"></span>
+            </div>
+            <input type="text" name="Number" id="number" placeholder="e.g. +1 234 567 890" autocomplete="tel">
+          </div>
+        </div>
+        <div class="footer" style="justify-content: flex-end;">
+          <button class="next-btn">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-two step">
+
+        <div class="header">
+          <h1> Select your plan </h1>
+          <p>You have the option of monthly or yearly billing.</p>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <img src="./images/icon-arcade.svg" alt="Arcade Img">
+            <div class="info">
+              <h3>Arcade</h3>
+              <p>$<span class="cost">9</span><span class="subscription">/mo</span></p>
+              <p class="free"></p>
+            </div>
+          </div>
+          <div class="detail">
+            <img src="./images/icon-advanced.svg" alt="Arcade Img">
+            <div class="info">
+              <h3>Advanced</h3>
+              <p>$<span class="cost">12</span><span class="subscription">/mo</span></p>
+              <p class="free"></p>
+            </div>
+          </div>
+          <div class="detail">
+            <img src="./images/icon-pro.svg" alt="Arcade Img">
+            <div class="info">
+              <h3>Pro</h3>
+              <p>$<span class="cost">15</span><span class="subscription">/mo</span></p>
+              <p class="free"></p>
+            </div>
+          </div>
+        </div>
+        <div class="switch-section">
+          <span class="time-span active">Monthly</span>
+          <div class="switch-btn"><span></span></div>
+          <span class="time-span">Yearly</span>
+        </div>
+
+        <div class="footer">
+          <button class="back-btn">Go Back</button>
+          <button class="next-btn">Next Step</button>
+        </div>
+
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-three step ">
+
+        <div class="header">
+          <h1> Pick add-ons </h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <input type="checkbox" name="online-services" id="online-services">
+            <label for="online-services" class="info">
+              <h3>Online Services</h3>
+              <p> Access to multiplayer games</p>
+            </label>
+            <p class="cost">+$<span class="add-on-price">1</span><span class="subscription">/mo</span></p>
+          </div>
+          <div class="detail">
+            <input type="checkbox" name="larger-storage" id="larger-storage">
+            <label for="larger-storage" class="info">
+              <h3>Larger storage</h3>
+              <p>Extra 1TB of cloud save</p>
+            </label>
+            <p class="cost">+$<span class="add-on-price">2</span><span class="subscription">/mo</span></p>
+          </div>
+          <div class="detail">
+            <input type="checkbox" name="customizable-profile" id="customizable-profile">
+            <label for="customizable-profile" class="info">
+              <h3>Customizable profile</h3>
+              <p>Custom theme on your profile</p>
+            </label>
+            <p class="cost">+$<span class="add-on-price">2</span><span class="subscription">/mo</span></p>
+          </div>
+        </div>
+
+        <div class="footer">
+          <button class="back-btn">Go Back</button>
+          <button class="next-btn">Next Step</button>
+        </div>
+
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-four step">
+
+        <div class="header">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming..</p>
+        </div>
+        <div class="cart">
+          <div class="cart-items">
+            <div class="selected-plan">
+              <div class="left">
+                <div class="details">
+                  <span class="name"></span>
+                  <span class="time">(<span>Monthly</span>)</span>
+                </div>
+                <div class="reselect">Change</div>
+              </div>
+              <div class="right">
+                <div class="price">
+                  +$<span class="value"></span><span class="subscription">/mo</span>
+                </div>
+              </div>
+            </div>
+            <div class="selected-add-ons">
+              <!-- Adding selected Add ons Dynamically -->
+            </div>
+          </div>
+          <div class="total">
+            <div class="left">Total (<span>per month</span>)</div>
+            <div class="right">
+              +$<span class="total-value"></span><span class="subscription">/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="back-btn">Go Back</button>
+          <button class="confirm-btn">Confirm</button>
+        </div>
+
+      </div>
+
+      <!-- Step 5 start -->
+
+      <div class="thank-section">
+        <img src="./images/icon-thank-you.svg" alt="Thank Img">
+        <h1>Thank you!</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at support@loremgaming.com.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Developer-Ashutosh/">Ashutosh Kumar</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

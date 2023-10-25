@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberryed: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+    --Main-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    font-size: var(--Main-size);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    font-size: var(--Main-size);
+    color: var(--Cool-gray);
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--Magnolia);
+    padding: var(--Main-size);
+}
+
+main {
+    max-width: 900px;
+    max-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--White);
+    border-radius: var(--Main-size);
+    padding: var(--Main-size);
+}
+
+/* Sidebar Starts */
+
+.sidebar {
+    width: 29%;
+    height: 100%;
+    background: url('./images/bg-sidebar-desktop.svg') no-repeat center;
+    background-size: cover;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px var(--Cool-gray);
+}
+
+.sidebar ul {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 15% 10%;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: var(--Main-size);
+}
+
+.sidebar .step-number {
+    color: var(--Alabaster);
+    font-weight: 500;
+    border: 2px solid var(--Light-blue);
+    border-radius: 50%;
+    padding: 7px 12px;
+    transition: 0.3s;
+}
+
+.sidebar .step-number.active {
+    color: var(--Marine-blue);
+    background-color: var(--Light-blue);
+    font-weight: 700;
+}
+
+.sidebar .right .step {
+    font-size: 14px;
+    color: var(--Pastel-blue);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.sidebar .right .title {
+    font-size: 16px;
+    color: var(--Alabaster);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* Sidebar Ends */
+
+/* Steps Start  */
+
+.steps {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.steps .step {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10% 12% 5%;
+    transition: 0.3s ease-in-out;
+}
+
+.steps .details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 1.2vw;
+}
+
+.steps .header h1 {
+    font-size: 2rem;
+    color: var(--Marine-blue);
+    margin-bottom: 2%;
+}
+
+.selected {
+    background-color: var(--Magnolia);
+    border: 1px solid var(--Purplish-blue) !important;
+}
+
+.steps .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .back-btn {
+    outline: none;
+    border: none;
+    background-color: var(--White);
+    color: var(--Cool-gray);
+    font-size: var(--Main-size);
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.footer .back-btn:hover {
+    color: var(--Marine-blue);
+    scale: 1.1;
+}
+
+.footer .next-btn {
+    outline: none;
+    border: none;
+    background-color: var(--Marine-blue);
+    color: var(--Light-gray);
+    padding: 10px var(--Main-size);
+    width: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer .next-btn:hover {
+    opacity: 0.9;
+}
+
+/* Step One Starts */
+
+.step-one .details .detail {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.step-one .detail .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step-one .head label {
+    color: var(--Marine-blue);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.step-one .head span {
+    color: var(--Strawberryed);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.step-one .detail input {
+    width: 100%;
+    height: 42px;
+    padding: 0 var(--Main-size);
+    outline: none;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#name {
+    text-transform: capitalize;
+}
+
+.step-one .detail input::placeholder {
+    color: var(--Cool-gray);
+    font-weight: 500;
+    text-transform: none;
+}
+
+.step-one .detail input:hover {
+    border: 1px solid var(--Purplish-blue);
+}
+
+.step-one .detail input:active,
+.step-one .detail input:focus {
+    border: 1px solid var(--Purplish-blue);
+    cursor: text;
+}
+
+.step-one .detail input::selection {
+    color: var(--Magnolia);
+    background-color: var(--Marine-blue);
+}
+
+/* Step One Ends */
+
+/* Step Two Starts */
+
+.step-two .details {
+    flex-direction: row;
+}
+
+.step-two .details .detail {
+    width: 32%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 35px;
+    padding: var(--Main-size);
+    border: 1px solid var(--Cool-gray);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.step-two .details .detail:hover {
+    border: 1px solid var(--Purplish-blue);
+}
+
+.step-two .detail .info h3 {
+    color: var(--Marine-blue);
+    margin-bottom: 5px;
+}
+
+.step-two .detail .info .free {
+    color: var(--Marine-blue);
+    margin-top: 6px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+}
+
+.step-two .switch-section {
+    height: 40px;
+    width: 100%;
+    background-color: var(--Magnolia);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.step-two .switch-section span {
+    color: var(--Cool-gray);
+    font-weight: 500;
+}
+
+.step-two .switch-section .active {
+    color: var(--Marine-blue);
+}
+
+.step-two .switch-btn {
+    width: 40px;
+    height: 22px;
+    padding: 3.5px 4px;
+    border-radius: 100px;
+    background-color: var(--Marine-blue);
+    transition: 0.5s;
+}
+
+.step-two .switch-btn span {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--White);
+    float: left;
+}
+
+.step-two .switch-btn span.switch {
+    float: right;
+}
+
+/* Step Two Ends */
+
+/* Step Three Strats */
+
+.step-three .details .detail {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    padding: var(--Main-size);
+    border: 1px solid var(--Cool-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.step-three .details .detail:hover {
+    border: 1px solid var(--Purplish-blue);
+}
+
+.step-three .info {
+    cursor: pointer;
+}
+
+.step-three .detail input {
+    height: 16px;
+    width: 16px;
+}
+
+.step-three .detail .cost {
+    color: var(--Purplish-blue);
+    position: absolute;
+    right: 15px;
+}
+
+/* Step Three Ends */
+
+/* Step Four Strats */
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cart-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    border-radius: 10px;
+    background-color: var(--Alabaster);
+    box-shadow: 1px 1px 11px var(--Light-gray);
+}
+
+.cart-items .selected-plan {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--Light-gray);
+    padding-bottom: 20px;
+}
+
+.cart-items .selected-plan .details {
+    flex-direction: row;
+    color: var(--Marine-blue);
+    font-weight: 500;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.cart-items .selected-plan .reselect {
+    width: fit-content;
+    color: var(--Cool-gray);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    cursor: pointer;
+}
+
+.cart-items .selected-plan .reselect:hover {
+    color: var(--Purplish-blue);
+    opacity: 0.9;
+}
+
+.cart-items .selected-plan .price,
+.cart-items .selected-plan .price span {
+    color: var(--Marine-blue);
+    font-weight: 700;
+}
+
+.cart-items .selected-add-ons .add-on {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.cart-items .add-on .name {
+    color: var(--Cool-gray);
+    font-size: 14px;
+    letter-spacing: -.3px;
+}
+
+.cart-items .add-on .price,
+.cart-items .add-on .price span {
+    color: var(--Marine-blue);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -.8px;
+}
+
+.cart .total {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.cart .total .left,
+.cart .total .left span {
+    color: var(--Cool-gray);
+    font-size: 15px;
+    letter-spacing: -.3px;
+}
+
+.cart .total .right,
+.cart .total .right span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Purplish-blue);
+}
+
+.confirm-btn {
+    outline: none;
+    border: none;
+    color: var(--Alabaster);
+    padding: 10px var(--Main-size);
+    width: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--Purplish-blue);
+    font-weight: 500;
+}
+
+.confirm-btn:hover {
+    opacity: 0.7;
+}
+
+/* Step Four Ends */
+
+/* Thank Section Strats */
+
+.thank-section {
+    min-height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.thank-section h1 {
+    font-size: 2rem;
+    color: var(--Marine-blue);
+    margin: 6% 0 3%;
+}
+
+.thank-section p {
+    line-height: 1.5rem;
+}
+
+/* Thank Section Ends */
+
+/* Steps End  */
+
+/* Attribution Starts */
+
+.attribution {
+    color: var(--Marine-blue);
+    font-size: var(--Main-size);
+    font-weight: 500;
+    margin-top: var(--Main-size);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--Marine-blue);
+    transition: 0.3s;
+}
+
+.attribution a:hover {
+    font-size: 17px;
+}
+
+/* Attribution Ends */
+
+
+/* Responsive Designs */
+
+/* Tablet Design */
+
+@media (width<=768px) {
+    main {
+        max-width: 600px;
+        max-height: 600px;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 27%;
+        background-image: url('./images/bg-sidebar-mobile.svg');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar ul {
+        padding: 2% 4%;
+        height: 100%;
+        align-content: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5%;
+    }
+
+    .sidebar li {
+        margin-top: 10px;
+        gap: 6px;
+    }
+
+    .sidebar .right .step {
+        display: none;
+    }
+
+    .sidebar .right .title {
+        font-size: 17px;
+        margin-top: 0;
+    }
+
+    .steps {
+        width: 100%;
+        height: 75%;
+        display: block;
+    }
+
+    .steps .step {
+        padding: 3% 9%;
+    }
+
+    .steps .details {
+        gap: 2vw;
+        margin: 4% 0;
+    }
+
+    .steps .header h1 {
+        font-size: 2rem;
+        color: var(--Marine-blue);
+        margin-bottom: 1%;
+        text-align: center;
+    }
+
+    .steps .header p {
+        text-align: center;
+    }
+
+    .cart {
+        margin-top: 2%;
+    }
+
+    .thank-section {
+        width: 100%;
+    }
+
+    .thank-section p {
+        width: 90%;
+    }
+}
+
+/* Mobile Design */
+
+@media (width<=500px) {
+
+    body {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        height: 30%;
+        background-color: transparent;
+        padding: 8px;
+    }
+
+    /* Sidebar Starts */
+
+    .sidebar {
+        height: 100%;
+        padding: 10% 0 15%;
+    }
+
+    .sidebar ul {
+        width: 70%;
+        flex-wrap: nowrap;
+    }
+
+    .sidebar li {
+        margin-top: 0;
+    }
+
+    .sidebar .right .step,
+    .sidebar .right .title {
+        display: none;
+    }
+
+    /* Sidebar Ends */
+
+    /* Steps Start  */
+
+    .steps {
+        width: 85%;
+        height: 68%;
+        background-color: var(--White);
+        position: absolute;
+        top: 16%;
+        border-radius: var(--Main-size);
+    }
+
+    .step-one .header,
+    .step-three .header {
+        margin-top: 18px;
+    }
+
+    .step-one .details {
+        gap: 15px;
+    }
+
+    .step-two .details {
+        flex-direction: column;
+    }
+
+    .step-two .details .detail {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .step-two .detail .info {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        flex-direction: row;
+    }
+
+    .step-two .detail .info .free {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .step-three .details {
+        gap: 15px;
+    }
+
+    .step-three .details .detail {
+        gap: 10px;
+        width: 105%;
+    }
+
+    .step-three .detail input {
+        height: 12px;
+        width: 12px;
+    }
+
+    .step-three .detail .info p {
+        font-size: 14px;
+    }
+
+    .step-three .detail .cost,
+    .step-three .detail .cost span {
+        top: 17px;
+        right: 5px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .step-four .header {
+        margin-top: 10px;
+    }
+
+    /* Steps Ends */
+
+    .attribution {
+        display: none;
+    }
+}
