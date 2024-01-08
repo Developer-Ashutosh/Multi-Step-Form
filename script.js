@@ -42,183 +42,188 @@ const fourthBackBtn = document.querySelector(".step-four .back-btn");
 
 // Function to validate user input in Step One
 const validateInfo = () => {
-    clientInfo.forEach((detail) => {
-        firstNextBtn.addEventListener("click", () => {
-            const input = detail.querySelector("input");
-            const span = detail.querySelector("span");
+  clientInfo.forEach((detail) => {
+    firstNextBtn.addEventListener("click", () => {
+      const input = detail.querySelector("input");
+      const span = detail.querySelector("span");
 
-            if (input.value === "") {
-                span.innerText = "This field is required";
-                input.style.border = "1px solid var(--Strawberryed)";
-                next = false;
-            } else if (!/^[A-Za-z\s]+$/.test(clientName.value)) {
-                document.querySelector("#name-error").innerText = "Not a Valid Name";
-                clientName.style.border = "1px solid var(--Strawberryed)";
-                next = false;
-            } else if (isNaN(clientNumber.value)) {
-                document.querySelector("#number-error").innerText = "Not a Valid Number";
-                clientNumber.style.border = "1px solid var(--Strawberryed)";
-                next = false;
-            } else {
-                span.innerText = "";
-                input.style.border = "1px solid var(--Pastel-blue)";
-                next = true;
-            }
-        });
+      if (input.value === "") {
+        span.innerText = "This field is required";
+        input.style.border = "1px solid var(--Strawberryed)";
+        next = false;
+      } else if (!/^[A-Za-z\s]+$/.test(clientName.value)) {
+        document.querySelector("#name-error").innerText = "Not a Valid Name";
+        clientName.style.border = "1px solid var(--Strawberryed)";
+        next = false;
+      } else if (isNaN(clientNumber.value)) {
+        document.querySelector("#number-error").innerText =
+          "Not a Valid Number";
+        clientNumber.style.border = "1px solid var(--Strawberryed)";
+        next = false;
+      } else {
+        span.innerText = "";
+        input.style.border = "1px solid var(--Pastel-blue)";
+        next = true;
+      }
     });
+  });
 };
 
 // Function to handle user selections in Step Two and Three
 const selectPlansAddOns = () => {
-    plans.forEach((plan) => {
-        plan.addEventListener("click", () => {
-            plans.forEach((plan) => {
-                plan.classList.remove("selected");
-            });
-            plan.classList.add("selected");
-            isSelected = true;
-            updateFinalDetails();
-        });
+  plans.forEach((plan) => {
+    plan.addEventListener("click", () => {
+      plans.forEach((plan) => {
+        plan.classList.remove("selected");
+      });
+      plan.classList.add("selected");
+      isSelected = true;
+      updateFinalDetails();
     });
-    addOns.forEach((addOn) => {
-        addOn.querySelector("label").addEventListener("click", () => {
-            addOn.classList.toggle("selected");
-            updateFinalDetails();
-        });
+  });
+  addOns.forEach((addOn) => {
+    addOn.querySelector("label").addEventListener("click", () => {
+      addOn.classList.toggle("selected");
+      updateFinalDetails();
     });
+  });
 };
 
 // Function to handle subscription switching in Step Two
 const switchSubscription = () => {
-    switchBtn.addEventListener("click", () => {
-        const timeSpan = document.querySelectorAll(".switch-section .time-span");
-        const planSubscription = document.querySelector(".step-four .cart");
+  switchBtn.addEventListener("click", () => {
+    const timeSpan = document.querySelectorAll(".switch-section .time-span");
+    const planSubscription = document.querySelector(".step-four .cart");
 
-        switchDot.classList.toggle("switch");
-        timeSpan.forEach((time) => {
-            time.classList.toggle("active");
-        });
-        if (switchDot.classList.contains("switch")) {
-            plans.forEach((plan) => {
-                document.querySelectorAll(".subscription").forEach((e) => {
-                    e.innerText = "0/yr";
-                });
-                plan.querySelector(".free").innerText = "2 months free";
-            });
-            planSubscription.querySelector(".selected-plan .time span").innerText = "Yearly";
-            planSubscription.querySelector(".total .left span").innerText = "per year";
-        } else {
-            plans.forEach((plan) => {
-                document.querySelectorAll(".subscription").forEach((e) => {
-                    e.innerText = "/mo";
-                });
-                plan.querySelector(".free").innerText = "";
-            });
-            planSubscription.querySelector(".selected-plan .time span").innerText = "Monthly";
-            planSubscription.querySelector(".total .left span").innerText = "per month";
-        }
+    switchDot.classList.toggle("switch");
+    timeSpan.forEach((time) => {
+      time.classList.toggle("active");
     });
+    if (switchDot.classList.contains("switch")) {
+      plans.forEach((plan) => {
+        document.querySelectorAll(".subscription").forEach((e) => {
+          e.innerText = "0/yr";
+        });
+        plan.querySelector(".free").innerText = "2 months free";
+      });
+      planSubscription.querySelector(".selected-plan .time span").innerText =
+        "Yearly";
+      planSubscription.querySelector(".total .left span").innerText =
+        "per year";
+    } else {
+      plans.forEach((plan) => {
+        document.querySelectorAll(".subscription").forEach((e) => {
+          e.innerText = "/mo";
+        });
+        plan.querySelector(".free").innerText = "";
+      });
+      planSubscription.querySelector(".selected-plan .time span").innerText =
+        "Monthly";
+      planSubscription.querySelector(".total .left span").innerText =
+        "per month";
+    }
+  });
 };
 
 // Function to update final details in Step Four
 const updateFinalDetails = () => {
-    const selectedPlan = document.querySelector(".step-two .detail.selected");
-    planName.innerText = selectedPlan.querySelector(".info h3").innerText;
-    planValue.innerText = selectedPlan.querySelector(".info .cost").innerText;
+  const selectedPlan = document.querySelector(".step-two .detail.selected");
+  planName.innerText = selectedPlan.querySelector(".info h3").innerText;
+  planValue.innerText = selectedPlan.querySelector(".info .cost").innerText;
 
-    const selectedAddOns = document.querySelectorAll(".step-three .detail.selected");
-    let addOnsValue = 0;
-    let addOnHTML = "";
-    selectedAddOns.forEach((addOn) => {
-        addOnHTML += `
+  const selectedAddOns = document.querySelectorAll(
+    ".step-three .detail.selected"
+  );
+  let addOnsValue = 0;
+  let addOnHTML = "";
+  selectedAddOns.forEach((addOn) => {
+    addOnHTML += `
                 <div class="add-on">
-                    <div class="name">${addOn.querySelector("label h3").innerText}</div>
+                    <div class="name">${
+                      addOn.querySelector("label h3").innerText
+                    }</div>
                     <div class="price">
-                        +$<span class="value">${addOn.querySelector(".add-on-price").innerText}</span><span class="subscription">/mo</span>
+                        +$<span class="value">${
+                          addOn.querySelector(".add-on-price").innerText
+                        }</span><span class="subscription">/mo</span>
                     </div>
                 </div>
             `;
-    });
-    planAddOnSection.innerHTML = addOnHTML;
+  });
+  planAddOnSection.innerHTML = addOnHTML;
 
-    if (switchDot.classList.contains("switch")) {
-        planAddOnSection.querySelectorAll(".subscription").forEach((e) => {
-            e.innerText = "0/yr";
-        });
-    } else {
-        planAddOnSection.querySelectorAll(".subscription").forEach((e) => {
-            e.innerText = "/mo";
-        });
-    }
-
-    planAddOnSection.querySelectorAll(".add-on").forEach((e) => {
-        addOnsValue += parseInt(e.querySelector(".value").innerText);
+  if (switchDot.classList.contains("switch")) {
+    planAddOnSection.querySelectorAll(".subscription").forEach((e) => {
+      e.innerText = "0/yr";
     });
-    totalAmount.innerText = parseInt(selectedPlan.querySelector(".info .cost").innerText) + parseInt(addOnsValue);
+  } else {
+    planAddOnSection.querySelectorAll(".subscription").forEach((e) => {
+      e.innerText = "/mo";
+    });
+  }
+
+  planAddOnSection.querySelectorAll(".add-on").forEach((e) => {
+    addOnsValue += parseInt(e.querySelector(".value").innerText);
+  });
+  totalAmount.innerText =
+    parseInt(selectedPlan.querySelector(".info .cost").innerText) +
+    parseInt(addOnsValue);
 };
 
 // Function to change steps in the form
 const changeStep = () => {
-    firstNextBtn.addEventListener("click", () => {
-        if (next) {
-            stepOne.style.transform = "translateY(-100%)";
-            stepTwo.style.transform = "translateY(-100%)";
-            stepNumberOne.classList.toggle("active");
-            stepNumberTwo.classList.toggle("active");
-            activateFooter();
-        }
-    });
-    secondBackBtn.addEventListener("click", () => {
-        stepOne.style.transform = "translateY(0%)";
-        stepTwo.style.transform = "translateY(0%)";
-        stepNumberOne.classList.toggle("active");
-        stepNumberTwo.classList.toggle("active");
-        activateFooter();
-    });
-    secondNextBtn.addEventListener("click", () => {
-        if (isSelected) {
-            stepTwo.style.transform = "translateY(-200%)";
-            stepThree.style.transform = "translateY(-200%)";
-            stepNumberTwo.classList.toggle("active");
-            stepNumberThree.classList.toggle("active");
-            activateFooter();
-        }
-    });
-    thirdBackBtn.addEventListener("click", () => {
-        stepTwo.style.transform = "translateY(-100%)";
-        stepThree.style.transform = "translateY(-100%)";
-        stepNumberTwo.classList.toggle("active");
-        stepNumberThree.classList.toggle("active");
-        activateFooter();
-    });
-    thirdNextBtn.addEventListener("click", () => {
-        stepThree.style.transform = "translateY(-300%)";
-        stepFour.style.transform = "translateY(-300%)";
-        stepNumberThree.classList.toggle("active");
-        stepNumberFour.classList.toggle("active");
-        activateFooter();
-    });
-    fourthBackBtn.addEventListener("click", () => {
-        stepThree.style.transform = "translateY(-200%)";
-        stepFour.style.transform = "translateY(-200%)";
-        stepNumberThree.classList.toggle("active");
-        stepNumberFour.classList.toggle("active");
-        activateFooter();
-    });
-    confirmBtn.addEventListener("click", () => {
-        stepFour.style.transform = "translateY(-400%)";
-        thankSection.style.transform = "translateY(-400%)";
-        activateFooter();
-    });
+  firstNextBtn.addEventListener("click", () => {
+    if (next) {
+      stepOne.style.transform = "translateY(-100%)";
+      stepTwo.style.transform = "translateY(-100%)";
+      stepNumberOne.classList.toggle("active");
+      stepNumberTwo.classList.toggle("active");
+    }
+  });
+  secondBackBtn.addEventListener("click", () => {
+    stepOne.style.transform = "translateY(0%)";
+    stepTwo.style.transform = "translateY(0%)";
+    stepNumberOne.classList.toggle("active");
+    stepNumberTwo.classList.toggle("active");
+  });
+  secondNextBtn.addEventListener("click", () => {
+    if (isSelected) {
+      stepTwo.style.transform = "translateY(-200%)";
+      stepThree.style.transform = "translateY(-200%)";
+      stepNumberTwo.classList.toggle("active");
+      stepNumberThree.classList.toggle("active");
+    }
+  });
+  thirdBackBtn.addEventListener("click", () => {
+    stepTwo.style.transform = "translateY(-100%)";
+    stepThree.style.transform = "translateY(-100%)";
+    stepNumberTwo.classList.toggle("active");
+    stepNumberThree.classList.toggle("active");
+  });
+  thirdNextBtn.addEventListener("click", () => {
+    stepThree.style.transform = "translateY(-300%)";
+    stepFour.style.transform = "translateY(-300%)";
+    stepNumberThree.classList.toggle("active");
+    stepNumberFour.classList.toggle("active");
+  });
+  fourthBackBtn.addEventListener("click", () => {
+    stepThree.style.transform = "translateY(-200%)";
+    stepFour.style.transform = "translateY(-200%)";
+    stepNumberThree.classList.toggle("active");
+    stepNumberFour.classList.toggle("active");
+  });
+  confirmBtn.addEventListener("click", () => {
+    stepFour.style.transform = "translateY(-400%)";
+    thankSection.style.transform = "translateY(-400%)";
+  });
 
-    change.addEventListener("click", () => {
-        stepTwo.style.transform = "translateY(-100%)";
-        stepThree.style.transform = "translateY(-100%)";
-        stepFour.style.transform = "translateY(-200%)";
-        stepNumberTwo.classList.toggle("active");
-        stepNumberFour.classList.toggle("active");
-        activateFooter();
-    });
+  change.addEventListener("click", () => {
+    stepTwo.style.transform = "translateY(-100%)";
+    stepThree.style.transform = "translateY(-100%)";
+    stepFour.style.transform = "translateY(-200%)";
+    stepNumberTwo.classList.toggle("active");
+    stepNumberFour.classList.toggle("active");
+  });
 };
 
 // Initialize the form functionality

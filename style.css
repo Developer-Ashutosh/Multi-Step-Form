@@ -532,29 +532,6 @@ main {
 
 /* Steps End  */
 
-/* Attribution Starts */
-
-.attribution {
-    color: var(--Marine-blue);
-    font-size: var(--Main-size);
-    font-weight: 500;
-    margin-top: var(--Main-size);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.attribution a {
-    color: var(--Marine-blue);
-    transition: 0.3s;
-}
-
-.attribution a:hover {
-    font-size: 17px;
-}
-
-/* Attribution Ends */
-
-
 /* Responsive Designs */
 
 /* Tablet Design */
@@ -650,16 +627,19 @@ main {
 
     main {
         width: 100%;
-        height: 30%;
+        height: 100%;
         background-color: transparent;
         padding: 8px;
+        position: relative;
     }
 
     /* Sidebar Starts */
 
     .sidebar {
-        height: 100%;
+        height: 25%;
+        width: 95%;
         padding: 10% 0 15%;
+        position: absolute;
     }
 
     .sidebar ul {
@@ -681,11 +661,11 @@ main {
     /* Steps Start  */
 
     .steps {
-        width: 85%;
-        height: 68%;
+        position: relative;
+        margin-top: 6rem;
+        width: 90%;
+        height: 80%;
         background-color: var(--White);
-        position: absolute;
-        top: 16%;
         border-radius: var(--Main-size);
     }
 
@@ -744,8 +724,8 @@ main {
 
     .step-three .detail .cost,
     .step-three .detail .cost span {
-        top: 17px;
-        right: 5px;
+        top: 25px;
+        right: 10px;
         font-size: 14px;
         font-weight: 500;
     }
@@ -755,8 +735,4 @@ main {
     }
 
     /* Steps Ends */
-
-    .attribution {
-        display: none;
-    }
 }

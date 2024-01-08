@@ -1,6 +1,6 @@
 # Frontend Mentor - Multi-step form solution
 
-This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/multi-step-form-hBGOZJUC09). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/multi-step-form-hBGOZJUC09). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -46,7 +46,7 @@ Users should be able to:
 
 ```css
 text-decoration-thickness: px ;
-About !important 
+About !important
 ```
 
 ```js
